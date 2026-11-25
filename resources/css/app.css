@@ -1,0 +1,35 @@
+@import 'tailwindcss';
+
+html[dir='ltr'] { direction: ltr; }
+@custom-variant dark (&:where(.dark, .dark *));
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../**/*.blade.php';
+@source '../**/*.{js,ts,jsx,tsx}';
+
+@theme {
+    --font-sans: 'Cairo', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+        'Segoe UI Symbol', 'Noto Color Emoji';
+}
+
+:root { color-scheme: light; }
+.dark { color-scheme: dark; }
+html[dir='rtl'] { direction: rtl; }
+table th, table td { text-align: center !important; vertical-align: middle; }
+body { margin: 0; background: #f1f5f9; color: #0f172a; }
+.dark body { background: #0b1220; color: #f1f5f9; }
+button, input, select, textarea { font: inherit; }
+
+.dark table thead { background: rgba(30, 41, 59, .85); color: #94a3b8; }
+.dark table tr { border-color: #334155; }
+.dark table tbody tr:hover { background: rgba(30, 41, 59, .55); }
+.dark .bg-slate-50 { background-color: rgba(30, 41, 59, .85); }
+.dark .text-slate-950, .dark .text-slate-900 { color: #f8fafc; }
+.dark .text-slate-600 { color: #cbd5e1; }
+.dark .border-t, .dark .border-b { border-color: #334155; }
+body::-webkit-scrollbar { width: 10px; height: 10px; }
+body::-webkit-scrollbar-track { background: #e2e8f0; }
+body::-webkit-scrollbar-thumb { background: #94a3b8; border-radius: 999px; }
+.dark body::-webkit-scrollbar-track { background: #0b1220; }
+.dark body::-webkit-scrollbar-thumb { background: #475569; }
